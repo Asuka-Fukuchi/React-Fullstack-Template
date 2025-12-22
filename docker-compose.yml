@@ -1,0 +1,28 @@
+# 役割
+# 複数のコンテナを作動させるための指示書
+# 対象コンテナ、環境、作動順などを定義
+
+version: "3.8"              # Docker Compose のバージョン
+
+services:
+  backend:                  # コンテナ名を設定
+    build: ./backend        # コンテナを起動させるためのDockerfileの所在を伝える
+    ports:                  # ポートを指定
+      - "3000:3000"
+    depends_on:
+      - mongo               # mongo起動後にbackendを起動するという宣言
+    env_file:               # 環境変数をこのファイルで定義したい場合は代わりにenvironmentを使う
+      - ./backend/.env      # DB接続のために環境変数の読込を指示
+    volumes:
+      - ./backend:/app      # ローカルの編集をコンテナに即反映させるための宣言
+      - /app/node_modules   # コンテナ内の node_modules をホストに上書きされないように固定
+
+  mongo:                    # コンテナ名を設定
+    image: mongo:7.0        # 環境とバージョンの指定
+    ports:
+      - "27017:27017"       # ポートを指定
+    volumes:
+      - mongo-data:/data/db # データベースを永続化するための宣言
+
+volumes:
+  mongo-data:               # MongoDB 用の永続化ボリュームを定義
