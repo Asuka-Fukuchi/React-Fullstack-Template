@@ -6,6 +6,7 @@ import cors from "cors";
 // 使用するRouterをインポート
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.routes";
+import baseRoutes from "./routes/base.routes";
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(express.json());
 // app.use("/api/auth", authRoutes);など
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/base", baseRoutes);
 
 export default app;
