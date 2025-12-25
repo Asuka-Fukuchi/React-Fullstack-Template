@@ -22,6 +22,7 @@ react-fullstack-template/
 │   ├─ .env
 │   ├─ Dockerfile
 │   ├─ openapi.yaml
+│   ├─ app.ts
 │   ├─ server.ts
 │   ├─ tsconfig.json
 │   └─ package.json
