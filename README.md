@@ -4,26 +4,34 @@
 ```bash
 react-fullstack-template/
 ├─ frontend/
-│   ├─ src/
 │   ├─ public/
+│   │   └── assets/
+│   ├── src/
+│   │   ├── api/           # API call
+│   │   ├── components/    
+│   │   ├── context/       # Context providers
+│   │   ├── pages/ 
+│   │   ├── services/      # Service modules for API calls
+│   │   ├── types/         # For TypeScript
+│   │   ├── utils/         # Helper
+│   │   └── App.tsx 
 │   ├─ package.json
 │   ├─ tsconfig.json
-│   ├─ vite.config.ts
-│   └─ ・・・
+│   └─ vite.config.ts
 │
 ├─ backend/
-│   ├─ config/          ← settings
-│   ├─ controllers/
-│   ├─ middleware/
-│   ├─ models/          ← For Database
-│   ├─ routes/
-│   ├─ services/
-│   ├─ types/           ← For TypeScript 
+│   ├─ config/          # DB接続や環境設定
+│   ├─ controllers/     # ルートごとの処理
+│   ├─ middleware/      # 認証・エラーハンドリング
+│   ├─ models/          # For Database
+│   ├─ routes/          # API ルート
+│   ├─ services/        # DB操作 + ビジネスロジック
+│   ├─ types/           # For TypeScript 
 │   ├─ .env
 │   ├─ Dockerfile
 │   ├─ openapi.yaml
-│   ├─ app.ts
-│   ├─ server.ts
+│   ├─ app.ts           # Express
+│   ├─ server.ts        # Server起動
 │   ├─ tsconfig.json
 │   └─ package.json
 │
