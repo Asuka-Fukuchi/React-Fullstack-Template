@@ -3,8 +3,7 @@ export interface UserCreate {
   lastName: string;
   email: string;
   password: string;
-  dob: string; 
-  isAdmin: boolean;
+  dob: string;
 }
 
 export interface UserPublic {

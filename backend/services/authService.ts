@@ -8,8 +8,7 @@ export async function createUserService
         lastName: string,
         email: string,
         password: string,
-        dob?: Date,
-        isAdmin?: boolean
+        dob?: Date
     ){
     const hashPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -18,7 +17,7 @@ export async function createUserService
         email,
         password: hashPassword,
         dob,
-        isAdmin
+        isAdmin: false
     });
     return user;
 }

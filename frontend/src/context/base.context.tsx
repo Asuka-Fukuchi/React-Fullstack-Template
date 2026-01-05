@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { BaseType, BaseTypeCreate, BaseTypeUpdate } from "../types/base.type";
+import type { BaseType, BaseTypeCreate } from "../types/base.type";
 import { getItems, createItem, updateItem, deleteItem } from '../services/base.service';
 
 interface BaseTypeContextType {
